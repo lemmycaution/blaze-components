@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- <script name="form" type='text/spacebars'>
+    <form name="{{./name}}" action="{{./action}}" method="{{./method}}" class="{{./class}} {{status}}">
+      {{> Template.contentBlock}}
+    </form>
+  </script> -->
+    
+  <script name="main" type="text/spacebars">
+  {{#form name="test" action="/form/example.html" method="get"}}
+    <input type="text" name="name" placeholder="name" />
+    <button type="submit">Submit</button>
+  {{/form}}
+  </script>
+  
+  <!-- Libs -->
+  <script src="../blaze.devel.js" type="text/javascript" charset="utf-8"></script>
+  
+  <!-- Components -->
+  <script src="form.js" type="text/javascript" charset="utf-8"></script>  
+  
+  <!-- App -->
+  <script type="text/javascript">
+  var form = new Form({
+    template: "main",
+    before: function(xhr) {
+      console.log(xhr);
+    },
+    error: function(jqXHR, textStatus, errorThrown ){
+      console.log(jqXHR, textStatus, errorThrown);
+    },
+    success: function(data, textStatus, jqXHR){
+      console.log(data, textStatus, jqXHR);
+    },
+  })
+
+  </script>
+
+</head>

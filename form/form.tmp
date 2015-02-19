@@ -1,0 +1,3 @@
+<form name="{{./name}}" action="{{./action}}" method="{{./method}}" class="{{./class}} {{status}}">
+  {{> Template.contentBlock}}
+</form>
