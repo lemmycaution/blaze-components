@@ -1,3 +1,8 @@
 <form name="{{./name}}" action="{{./action}}" method="{{./method}}" class="{{./class}} {{status}}">
+  {{status}}
   {{> Template.contentBlock}}
+  {{#if reset}}
+    <button type="reset">Reset</button>
+  {{/if}}
+  <button type="submit">Submit</button>      
 </form>

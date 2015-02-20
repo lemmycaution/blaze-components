@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  
+  <style>
+  form{
+    padding:12px;
+  }
+  form.idle{
+    border:1px solid blue;
+  }
+  form.error{
+    border:1px solid red;
+  }
+  form.success{
+    border:1px solid green;
+  }
+  form.loading{
+    border:1px solid yellow;
+  }
+  </style>
+  
+  <!-- Component Template 
+    
+  -->
+  <!-- <script name="form" type='text/spacebars'>
+    <form name="{{./name}}" action="{{./action}}" method="{{./method}}" class="{{./class}} {{status}}">
+      {{status}}
+      {{> Template.contentBlock}}
+      {{#if reset}}
+        <button type="reset">Reset</button>
+      {{/if}}
+      <button type="submit">Submit</button>
+    </form>
+  </script> -->
+ 
+  <!-- Example Component Instance Templates -->
+  <!-- <script name="form1" type='text/spacebars'>
+    {{#form name="form1" action="/form/example.html" method="get"}}
+      <input type="text" name="name" placeholder="name" />
+    {{/form}}
+  </script>  -->
+
+  <!-- <script name="form2" type='text/spacebars'>
+    {{#form name="form2" action="/form/example.html" method="post" reset=true}}
+      <input type="email" name="email" placeholder="email" />
+    {{/form}}
+  </script> -->
+       
+  <!-- Main -->       
+  <!-- <script name="main" type="text/spacebars">
+    {{> form1}}
+    {{> form2}}
+  </script> -->
+  
+  <!-- Libs -->
+  <script src="../lib/blaze.devel.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../lib/blaze.parent_template.js" type="text/javascript" charset="utf-8"></script>  
+    
+  <!-- Components --> 
+  <script src="../dist/component.js" type="text/javascript" charset="utf-8"></script>  
+  <script src="../dist/serialization.js" type="text/javascript" charset="utf-8"></script>    
+  <script src="../dist/form.js" type="text/javascript" charset="utf-8"></script>
+    
+  <!-- App -->
+  <script type="text/javascript">
+  form = new Form("../src/form")
+  
+  Blaze.loadTemplate("form1")
+  Blaze.loadTemplate("form2")  
+  Blaze.loadTemplate("main")  
+
+  $(document).on("blazeReady", function() {
+    console.log("blazeReady") 
+    
+    Template.form1.before = function() {
+      console.log("form1 before", arguments)
+    }
+    
+    Template.form2.error = function() {
+      console.log("form2 error", arguments)
+    }
+  })
+  </script>
+
+</head>

@@ -1,0 +1,3 @@
+{{#form name="form2" action="/form/example.html" method="post" reset=true}}
+  <input type="email" name="email" placeholder="email" />
+{{/form}}
