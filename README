@@ -1,4 +1,8 @@
-# Reusable Blaze Web Components
+# Reusable Web Components
+Currently only one component here, actually it's a proof of concept. 
+Using a bit modified and standalone version of Meteor's Blaze.
+One of additional functions Blaze.loadTemplate async loads templates and compiles it.
+So template files can be live in separate places.
 
 # TODO
 testing!!!
